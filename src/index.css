@@ -64,14 +64,14 @@ button:focus-visible {
   flex-direction: column;
   align-items: center; /* Ändrat till align-items för korrekt vertikal centrering */
   justify-content: space-evenly;
-  padding: 
+  padding: 20;
  
 }
 
 input, select {
-  padding: 5px;
+  padding: 4px;
   border-radius: 5px;
   border: solid;
   border-color: #dddddd;
-  margin: 5px;
+  margin: 2px;
 }
