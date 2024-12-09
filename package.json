@@ -3,13 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+<<<<<<< HEAD
   "homepage": "https://webexpressab.github.io/QrCodeGen/",
+=======
+>>>>>>> 3f23ba902cf73040c2f3e5e9ed038d9a07df6ffe
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "start": "serve -s dist",
-    "dev": "vite",
     "build": "tsc -b && vite build",
+    "heroku-postbuild": "npm run build",
+    "dev": "vite",
     "lint": "eslint .",
     "preview": "vite preview"
   },
