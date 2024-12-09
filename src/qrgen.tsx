@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { QRCode } from "react-qrcode-logo";
-import styles from "./styles.module.css";
 import { Button } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
