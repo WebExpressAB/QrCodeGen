@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { QRGen } from "./qrgen";
-import styles from "./App.module.css";
 import { ColorPicker, ColorPickerChangeEvent } from "primereact/colorpicker";
 import { Card, Container, Col, Button, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -95,6 +94,7 @@ const App: React.FC = () => {
 
   return (
     <Container>
+      
       <div className="text-center">
         {/* QR-koden */}
         <QRGen
@@ -115,7 +115,7 @@ const App: React.FC = () => {
         <Row className="justify-content-center">
           <Col xs={12} md={8} lg={7}>
             <Card className="mt-1 p-3" >
-              <form className={styles.formcontainer}>
+              <form >
                 <div>
                   <label htmlFor="url">QR Code URL:</label>
                   <input
@@ -123,13 +123,13 @@ const App: React.FC = () => {
                     name="url"
                     value={formData.url}
                     onChange={handleInputChange}
-                    className="ms-1"
+                    className="ms-1 mt-1"
                   />
                 </div>
                 <div>
                   <label htmlFor="logoImage">Logo Image:</label>
                   <input
-                    className="ms-1"
+                    className="ms-1 mt-3"
                     type="text"
                     name="logoImage"
                     value={formData.logoImage || ""}
@@ -155,7 +155,7 @@ const App: React.FC = () => {
                 <div>
               <label htmlFor="logoScale">Logo Size:</label>
               <input
-              className="ms-1 mt-1"
+              className="ms-1 mt-3"
                type="range"
                name="logoScale"
                min="10"
@@ -176,7 +176,7 @@ const App: React.FC = () => {
         <div>
           <label htmlFor="logoOpacity">Logo Opacity:</label>
           <input
-          className="ms-1 mt-1"
+          className="ms-1 mt-3"
           type="range"
           name="logoOpacity"
           min="0"
@@ -200,7 +200,7 @@ const App: React.FC = () => {
               name="qrStyle"
               value={formData.qrStyle}
               onChange={handleInputChange}
-              className="ms-1"
+              className="ms-1 mt-3"
             >
               <option value="dots">Dots</option>
               <option value="squares">Squares</option>
@@ -210,7 +210,7 @@ const App: React.FC = () => {
           <div>
             <label htmlFor="eyeRadius">Eye Radius:</label>
             <input
-            className="ms-1 mt-1"
+            className="ms-1 mt-3"
               type="range"
               name="eyeRadius"
               min="0"
@@ -229,7 +229,7 @@ const App: React.FC = () => {
                 <div>
                   <label htmlFor="bgColor">Background Color:</label>
                   <ColorPicker
-                  className="ms-1 mt-1"
+                  className="ms-1 mt-3"
                     inputId="bgColor"
                     format="hex"
                     value={formData.bgColor}
@@ -238,7 +238,7 @@ const App: React.FC = () => {
                     }
                   />
                   <input
-                  className="ms-1 mt-1"
+                  className="ms-1 mt-3"
                     type="text"
                     value={formData.bgColor}
                     name="bgColor"
@@ -249,7 +249,7 @@ const App: React.FC = () => {
                 <div>
                   <label htmlFor="fgColor">Foreground Color:</label>
                   <ColorPicker
-                  className="ms-1 mt-1"
+                  className="ms-1 mt-3"
                     inputId="fgColor"
                     format="hex"
                     value={formData.fgColor}
@@ -258,7 +258,7 @@ const App: React.FC = () => {
                     }
                   />
                   <input
-                  className="ms-1 mt-1"
+                  className="ms-1 mt-3"
                     type="text"
                     value={formData.fgColor}
                     name="fgColor"
