@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import { QRCode } from "react-qrcode-logo";
 import styles from "./styles.module.css";
+import { Button } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 interface QRGenProps {
     url: string;
@@ -38,7 +40,8 @@ export const QRGen: React.FC<QRGenProps> = ({
     };
 
     return (
-        <div className={styles.App}>
+     <>
+     <div className="mt-1">
             <QRCode
                 ref={qrRef} // Attach the ref to access the QRCode instance
                 value={url}
@@ -53,11 +56,12 @@ export const QRGen: React.FC<QRGenProps> = ({
                 bgColor={bgColor}
                 fgColor={fgColor}
             />
-            <p>
-                <button type="button" onClick={downloadCode}>
+<p>
+                <Button className="btn btn-primary" onClick={downloadCode}>
                     Download QR Code
-                </button>
-            </p>
-        </div>
+                </Button>
+                </p>
+                </div>
+        </>
     );
 };
