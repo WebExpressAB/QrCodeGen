@@ -1,22 +1,23 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .formcontainer {
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: space-evenly;
-  width: 50vw;
-  height: 25vw;
+  
+  height: 22vw;
+}
+
+input {
+  padding: 4px;
+border-radius: 5px;
+border: solid;
+border-color: #dddddd;
+margin: 2px;
+}
+
+select {
+  padding: 4px;
+  border-radius: 5px;
+  border: solid;
+  border-color: #dddddd;
 }
