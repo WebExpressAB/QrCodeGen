@@ -94,42 +94,27 @@ const App: React.FC = () => {
 
   return (
     <Container>
-      
-      <div className="text-center">
-        {/* QR-koden */}
-        <QRGen
-          url={formData.url}
-          size={formData.size}
-          logoImage={formData.logoImage}
-          logoHeight={logoHeight}
-          logoWidth={logoWidth}
-          logoOpacity={formData.logoOpacity}  
-          qrStyle={formData.qrStyle}
-          eyeRadius={formData.eyeRadius}
-          fileName={formData.fileName}
-          bgColor={formData.bgColor}
-          fgColor={formData.fgColor}
-        />
-
+       <Row>
+     
         {/* Formulär för att välja QR-kodens inställningar */}
-        <Row className="justify-content-center">
-          <Col xs={12} md={8} lg={7}>
-            <Card className="mt-1 p-3" >
+       
+          <Col xs={12} md={8} lg={4}>
+            <Card className="mt-5 p-3" >
               <form >
                 <div>
-                  <label htmlFor="url">QR Code URL:</label>
+                  <label htmlFor="url">QR Code URL:</label><br/>
                   <input
+                  className="mt-2 mb-3"
                     type="text"
                     name="url"
                     value={formData.url}
                     onChange={handleInputChange}
-                    className="ms-1 mt-1"
                   />
                 </div>
                 <div>
-                  <label htmlFor="logoImage">Logo Image:</label>
+                  <label htmlFor="logoImage">Logo Image:</label><br/>
                   <input
-                    className="ms-1 mt-3"
+              className="mt-2 mb-3"
                     type="text"
                     name="logoImage"
                     value={formData.logoImage || ""}
@@ -153,7 +138,7 @@ const App: React.FC = () => {
                   />
                 </div>
                 <div>
-              <label htmlFor="logoScale">Logo Size:</label>
+              <label htmlFor="logoScale">Logo Size:</label><br/>
               <input
               className="ms-1 mt-3"
                type="range"
@@ -174,7 +159,7 @@ const App: React.FC = () => {
           <span>{formData.logoAspectRatio === 1 ? (formData.logoScale / 30 * 100).toFixed(0) : (formData.logoScale / 40 * 100).toFixed(0)}%</span> {/* Omvandla till 100% på max */}
         </div>
         <div>
-          <label htmlFor="logoOpacity">Logo Opacity:</label>
+          <label htmlFor="logoOpacity">Logo Opacity:</label><br/>
           <input
           className="ms-1 mt-3"
           type="range"
@@ -195,12 +180,12 @@ const App: React.FC = () => {
          <span>{Math.round(formData.logoOpacity * 100)}%</span>
           </div>
           <div>
-            <label htmlFor="qrStyle">QR Style:</label>
+            <label htmlFor="qrStyle">QR Style:</label><br/>
             <select
               name="qrStyle"
               value={formData.qrStyle}
               onChange={handleInputChange}
-              className="ms-1 mt-3"
+              className="ms-1 mt-3 mb-3"
             >
               <option value="dots">Dots</option>
               <option value="squares">Squares</option>
@@ -208,9 +193,9 @@ const App: React.FC = () => {
             </select>
           </div>
           <div>
-            <label htmlFor="eyeRadius">Eye Radius:</label>
+            <label htmlFor="eyeRadius">Eye Radius:</label><br/>
             <input
-            className="ms-1 mt-3"
+            className="ms-1 mt-23"
               type="range"
               name="eyeRadius"
               min="0"
@@ -227,7 +212,7 @@ const App: React.FC = () => {
             <span>{formData.eyeRadius}px</span>
           </div>
                 <div>
-                  <label htmlFor="bgColor">Background Color:</label>
+                  <label htmlFor="bgColor">Background Color:</label><br/>
                   <ColorPicker
                   className="ms-1 mt-3"
                     inputId="bgColor"
@@ -238,7 +223,7 @@ const App: React.FC = () => {
                     }
                   />
                   <input
-                  className="ms-1 mt-3"
+                  className="ms-1 mt-3 mb-3"
                     type="text"
                     value={formData.bgColor}
                     name="bgColor"
@@ -247,7 +232,7 @@ const App: React.FC = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="fgColor">Foreground Color:</label>
+                  <label htmlFor="fgColor">Foreground Color:</label><br/>
                   <ColorPicker
                   className="ms-1 mt-3"
                     inputId="fgColor"
@@ -268,8 +253,27 @@ const App: React.FC = () => {
               </form>
             </Card>
           </Col>
+          <Col>
+      
+      <div className="text-center mt-5">
+        {/* QR-koden */}
+        <QRGen
+          url={formData.url}
+          size={formData.size}
+          logoImage={formData.logoImage}
+          logoHeight={logoHeight}
+          logoWidth={logoWidth}
+          logoOpacity={formData.logoOpacity}  
+          qrStyle={formData.qrStyle}
+          eyeRadius={formData.eyeRadius}
+          fileName={formData.fileName}
+          bgColor={formData.bgColor}
+          fgColor={formData.fgColor}
+        />
+</div>
+</Col>
         </Row>
-      </div>
+ 
     </Container>
   );
 };
