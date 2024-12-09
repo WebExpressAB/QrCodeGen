@@ -113,7 +113,7 @@ const App: React.FC = () => {
 
         {/* Formulär för att välja QR-kodens inställningar */}
         <Row className="justify-content-center">
-          <Col xs={12} md={8} lg={6}>
+          <Col xs={12} md={8} lg={7}>
             <Card className="mt-1 p-3" >
               <form className={styles.formcontainer}>
                 <div>
@@ -153,8 +153,9 @@ const App: React.FC = () => {
                   />
                 </div>
                 <div>
-              <label htmlFor="logoScale">Logo Size</label>
+              <label htmlFor="logoScale">Logo Size:</label>
               <input
+              className="ms-1 mt-1"
                type="range"
                name="logoScale"
                min="10"
@@ -175,6 +176,7 @@ const App: React.FC = () => {
         <div>
           <label htmlFor="logoOpacity">Logo Opacity:</label>
           <input
+          className="ms-1 mt-1"
           type="range"
           name="logoOpacity"
           min="0"
@@ -192,9 +194,42 @@ const App: React.FC = () => {
          {/* Omvandla opacity till procent (0–100) */}
          <span>{Math.round(formData.logoOpacity * 100)}%</span>
           </div>
+          <div>
+            <label htmlFor="qrStyle">QR Style:</label>
+            <select
+              name="qrStyle"
+              value={formData.qrStyle}
+              onChange={handleInputChange}
+              className="ms-1"
+            >
+              <option value="dots">Dots</option>
+              <option value="squares">Squares</option>
+              <option value="fluid">Fluid</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="eyeRadius">Eye Radius:</label>
+            <input
+            className="ms-1 mt-1"
+              type="range"
+              name="eyeRadius"
+              min="0"
+              max="20"
+              step="1"
+              value={formData.eyeRadius}
+              onChange={(e) =>
+                setFormData((prev) => ({
+                  ...prev,
+                  eyeRadius: Number(e.target.value),
+                }))
+              }
+            />
+            <span>{formData.eyeRadius}px</span>
+          </div>
                 <div>
                   <label htmlFor="bgColor">Background Color:</label>
                   <ColorPicker
+                  className="ms-1 mt-1"
                     inputId="bgColor"
                     format="hex"
                     value={formData.bgColor}
@@ -203,6 +238,7 @@ const App: React.FC = () => {
                     }
                   />
                   <input
+                  className="ms-1 mt-1"
                     type="text"
                     value={formData.bgColor}
                     name="bgColor"
@@ -213,6 +249,7 @@ const App: React.FC = () => {
                 <div>
                   <label htmlFor="fgColor">Foreground Color:</label>
                   <ColorPicker
+                  className="ms-1 mt-1"
                     inputId="fgColor"
                     format="hex"
                     value={formData.fgColor}
@@ -221,6 +258,7 @@ const App: React.FC = () => {
                     }
                   />
                   <input
+                  className="ms-1 mt-1"
                     type="text"
                     value={formData.fgColor}
                     name="fgColor"
