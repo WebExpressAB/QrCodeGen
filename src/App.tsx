@@ -21,7 +21,7 @@ const App: React.FC = () => {
     logoAspectRatio: number;
   }>({
     url: "https://www.webexpress.se",
-    size: 450,
+    size: 550,
     logoImage:
       "https://media.licdn.com/dms/image/v2/D4D0BAQGhwC4IauTzFw/company-logo_200_200/company-logo_200_200/0/1715932659088/webexpress_ab_logo?e=2147483647&v=beta&t=vD6B4dnP9d07pbL_CEo9z6SIv19A0Outej5VcEVaA4g",
     logoScale: 20,
