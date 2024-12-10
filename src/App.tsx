@@ -21,7 +21,7 @@ const App: React.FC = () => {
     logoAspectRatio: number;
   }>({
     url: "https://www.webexpress.se",
-    size: 550,
+    size: 650,
     logoImage:
       "https://media.licdn.com/dms/image/v2/D4D0BAQGhwC4IauTzFw/company-logo_200_200/company-logo_200_200/0/1715932659088/webexpress_ab_logo?e=2147483647&v=beta&t=vD6B4dnP9d07pbL_CEo9z6SIv19A0Outej5VcEVaA4g",
     logoScale: 20,
@@ -99,7 +99,7 @@ const App: React.FC = () => {
         {/* Formulär för att välja QR-kodens inställningar */}
        
           <Col xs={12} md={8} lg={4}>
-            <Card className="mt-5 p-3" >
+            <Card className="mt-5 p-3" style={{width: "350px"}} >
               <form >
                 <div>
                   <label htmlFor="url">QR Code URL:</label><br/>
@@ -231,12 +231,13 @@ const App: React.FC = () => {
                   />
                 </div>
 
-                <div>
+                <div >
                   <label htmlFor="fgColor">Foreground Color:</label><br/>
                   <ColorPicker
                   className="ms-1 mt-3"
                     inputId="fgColor"
                     format="hex"
+          
                     value={formData.fgColor}
                     onChange={(e: ColorPickerChangeEvent) =>
                       handleColorChange("fgColor", e.value || "#000000")
