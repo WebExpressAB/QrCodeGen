@@ -56,7 +56,7 @@ export const QRGen: React.FC<QRGenProps> = ({
                 fgColor={fgColor}
             />
 <p>
-                <Button className="btn btn-primary" onClick={downloadCode}>
+                <Button className="btn btn-primary mt-4" onClick={downloadCode}>
                     Download QR Code
                 </Button>
                 </p>
